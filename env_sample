@@ -1,0 +1,30 @@
+#=======================DEVOPS SECTION / COMMENT ON LOCAL==============================#
+PROJECT_NAME=naxa-backend-boilerplate
+IMAGE_TAG=develop
+COMPOSE_PROJECT_NAME=$PROJECT_NAME-$IMAGE_TAG
+WEB_APP_PORT=8000
+#======================================================================================#
+
+#=======================DATABASE SECTION==============================#
+POSTGRES_USER=postgres
+POSTGRES_DB=project_db
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+#========================================================================#
+
+#=======================Geoserver SECTION==============================#
+GEOSERVER_HOST=http://geoserver/geoserver
+GEOSERVER_USER=admin
+GEOSERVER_PASSWORD=geoserver
+#========================================================================#
+
+#==============================DJANGO SETTINGS MODULE=====================================#
+DEBUG=True
+SECRET_KEY=xyggxxxyyzdefsdfsdf-+5g3vYi0+s^*3y
+SITE_ID=1
+
+SQL_ENGINE=django.contrib.gis.db.backends.postgis
+DEFAULT_AUTO_FIELD=django.db.models.AutoField
+DJANGO_SETTINGS_MODULE=project.settings
+#==========================================================================================#

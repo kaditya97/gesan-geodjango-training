@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  web:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    entrypoint: ./entrypoint.sh
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgis/postgis:16-3.4-alpine
+    restart: always
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5434:5432
+    env_file:
+      - .env
+  
+  geoserver:
+    image: kartoza/geoserver:2.19.0
+    container_name: geoserver
+    env_file: geoserver_env.txt
+    restart : on-failure
+    volumes:
+      - ./geoserver-data:/opt/geoserver/data_dir
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db

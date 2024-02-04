@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boilerplate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+
+        <h1 align="center">Django Boiler Plate </h1>
+        <h1 align="center">Congratulation Setup Successfully Completed!!!! </h1>
+        <p align="center">Base project structure with some included package and function. To be used for all projects
+        for Backend</p>
+        <h3 class="text-bold mt-5">Package Included </h3>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <th>
+                        Package Name
+                    </th>
+                    <th>
+                        Package Key
+                    </th>
+                    <th>
+                        Package Version
+                    </th>
+                </thead>
+                <tbody>
+                    {% for package in packages %}
+                    <tr>
+                        <td>
+                            <b>{{ package.project_name }}</b>
+                        </td>
+                        <td>
+                            {{ package.key }}
+                        </td>
+                        <td>
+                            {{ package.version }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+        <br>
+        <h3>Api Documentation</h3>
+        <div>
+            <li>Swagger used for Api Documentation</li>
+            <li>All api's Listed in Api Documentation Page</li>
+            <li>Check <b>/project/urls.py</b> file for settings used</li>
+            <li>Package used <b>drf-yasg==1.20.0</b></li>
+            <li>Check Api Documentation Page <a href="/api/docs/">Api</a></li>
+        </div>
+
+        <br>
+        <h3>Login and Logout </h3>
+        <div>
+            <li>Used django built-in auth view</li>
+            <li>Check <b>/project/urls.py/</b> for the used views</li>
+            <li>Sample redirect Url in Local settings files <b>/project/local_settings_sample.py</b></li>
+            <li>Check <b>templates/registration/login.html</b> for login html file</li>
+            <li>Check Login url <a href="/login/">Login</a></li>
+        </div>
+
+        <br>
+        <h3>API Authentication</h3>
+        <div>
+            <li>In built DRF Token Authentication Used</li>
+            <li>Check <b>/project/urls.py/</b> for the used views</li>
+            <li>Authentication Class Defined in <b>/project/settings.py</b></li>
+            <li>Check "api-token" in <a href="/api/docs/">API</a></li>
+        </div>
+
+
+        <br>
+        <h3>External sevices urls if used</h3>
+        <div>
+            <li>Geoserver used for spatial data managemnt <a href=http://localhost:8600/geoserver>Geoserver</a></li>
+            <li>Postgres gui admin dashboard <a href=http://localhost:5051>pgadmin</a></li>
+        </div>
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="text-muted">
+                    Backend Boilerplate © <script>let d = new Date(); document.write(d.getUTCFullYear())</script>
+                </span>
+
+            </div>
+        </footer>
+    </div>
+    </body>
+</html>
