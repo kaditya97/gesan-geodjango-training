@@ -147,3 +147,11 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"),)
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Geoserver settings
+GEOSERVER_URL = os.environ.get("GEOSERVER_URL", "http://localhost:8080/geoserver")
+GEOSERVER_USER = os.environ.get("GEOSERVER_USER", "admin")
+GEOSERVER_PASSWORD = os.environ.get("GEOSERVER_PASSWORD", "geoserver")
+GEOSERVER_RASTER_WORKSPACE = os.environ.get(
+    "GEOSERVER_RASTER_WORKSPACE", "default"
+)
