@@ -6,6 +6,7 @@ DockerData/
 # Postgresql
 postgres_data
 ./postgres_data
+./geoserver-data
 postgres_data/
 
 #redis
