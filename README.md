@@ -1,4 +1,4 @@
-## Steps to setup this proejct
+## Steps to setup this proejct using docker
 ### Install wsl on windows [click here](https://learn.microsoft.com/en-us/windows/wsl/install)
 ### Install docker and docker compose [click here](https://docs.docker.com/engine/install/ubuntu/)
 ## Clone the project
